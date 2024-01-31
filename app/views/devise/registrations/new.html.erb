@@ -1,0 +1,54 @@
+<h2>新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field">
+        <%= f.label "名前" %> <em>(10文字以内で入力してください)</em><br />
+        <%= f.text_field :name, autofocus: true, maxlength: "10" %>
+      </div>
+
+  <div class="field">
+    <%= f.label "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "パスワード" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 桁で入力してください)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :birthday, "生年月日" %><br>
+    <%= f.date_select :birthday, {start_year: 1970, end_year: (Time.now.year - 10),
+    include_blank: true, use_two_digit_numbers: true},
+    {class: "input-tab birthday-select"}%>
+  </div>
+  <% end %>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :child_birthday, "お子様の生年月日" %><br>
+    <%= f.date_select :child_birthday, {start_year: 2010, end_year: (Time.now.year),
+    include_blank: true, use_two_digit_numbers: true},
+    {class: "input-tab birthday-select"}%>
+  </div>
+  <% end %>
+
+
+
+  <div class="actions">
+    <%= f.submit "Baby Reviewを始める" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
