@@ -1,0 +1,28 @@
+<h2 class="items-sell-title">レビュー品の入力</h2>
+    <%= form_with model:@review, local: true do |f| %>
+
+      <div class="item-name">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :item_name, class:"items-name", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      
+      <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+      </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+      
+      
+      
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"text", id:"text", placeholder:"商品のレビュー（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      
+
+      <% end %>
