@@ -32,6 +32,15 @@
         </div>
         <%= f.text_area :text, class:"text", id:"text", placeholder:"商品のレビュー（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
+
+      <div class="weight-bold-text">
+        <span class="indispensable">※</span>
+        商品画像
+        <span class="indispensable">※</span>
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"review-image"  %>
+      </div>
     </div>
   </div>
   <div class="review-btn-contents">

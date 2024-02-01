@@ -1,11 +1,16 @@
+<h3 class="midashi">使用した商品をレビューしてみんなで情報交換をしよう！</h3>
+<h3 class="midashi">to reviewボタンから投稿してね</h3>
+<%= link_to "to review", new_review_path, class:"review-btn" %>
+
 <% @reviews.each do |review| %>
 
 <div class='review_list'>
+  <%= image_tag review.image, class: 'review-image' if review.image.attached?%>
   <h3 class='item_name'>
-    <%= "review.item_name" %>
+    <%= review.item_name %>
   </h3>
   <h4 class='user_name'>
-    <%= "review.user_name" %>
+    <%= review.user.name %>
   </h4>
 </div>
 

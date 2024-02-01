@@ -21,6 +21,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:item_name, :category_id, :evaluation_id, :text).merge(user_id: current_user.id)
+    params.require(:review).permit(:item_name, :category_id, :evaluation_id, :text, :image).merge(user_id: current_user.id)
   end
 end
