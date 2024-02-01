@@ -7,6 +7,13 @@
       </div>
       <%= f.text_area :item_name, class:"items-name", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       
+<div class="weight-bold-text">
+          評価
+          <span class="indispensable">必須</span>
+      </div>
+        <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+      
+
       <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
