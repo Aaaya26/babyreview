@@ -5,7 +5,9 @@
 <% @reviews.each do |review| %>
 
 <div class='review_list'>
+  <%= link_to review_path(review.id) do %>
   <%= image_tag review.image, class: 'review-image' if review.image.attached?%>
+  <% end %>
   <h3 class='item_name'>
     <%= review.item_name %>
   </h3>
