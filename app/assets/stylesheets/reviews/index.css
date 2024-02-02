@@ -1,0 +1,18 @@
+.midashi {
+  text-align: center;
+  color: gray;
+  font-size: 20px;
+}
+
+.review-btn{
+  display: block;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}

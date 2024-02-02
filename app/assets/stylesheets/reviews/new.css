@@ -1,0 +1,46 @@
+.new-review {
+  font-family: 'Poor Story', system-ui;
+  flex-direction: column;
+}
+
+.items-sell-title {
+  text-align: center;
+}
+
+.new-form {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  margin: 20px;
+}
+
+.indispensable {
+  color: #FF367F;
+  font-size: 14px;
+  
+}
+
+.weight-bold-text {
+  color: gray;
+  min-width: 150px;
+  padding: 5px;
+}
+
+.review-btn-contents {
+  text-align: center;
+  font-family: 'Poor Story', system-ui;
+}
+
+.review-btn {
+  background-color: #B1F9D0;
+  color: darkgray;
+  width: 170px;
+  height: 50px;
+  font-size: 20px;
+  font-family: 'Poor Story', system-ui;
+}
+
+.back-btn {
+  text-decoration: none;
+}

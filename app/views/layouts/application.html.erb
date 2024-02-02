@@ -16,7 +16,7 @@
   <body>
     <header>
       <div class='main-page'>
-      <%= link_to 'Baby Review', "#", class: "title" %>
+      <%= link_to 'Baby Review', root_path, class: "title" %>
       <ul class='lists-right'>
       <% if user_signed_in? %>
         <li><%= link_to current_user.name, "#", class: "user-name" %></li>
