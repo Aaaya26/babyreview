@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-
+  before_action :authenticate_user!, except: :index
+  
   def index
     @reviews = Review.all
   end
@@ -10,12 +11,15 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    
     if @review.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
   private
