@@ -1,0 +1,70 @@
+.show-review-top {
+  font-family: 'Poor Story', system-ui;
+  text-align: center;
+  font-size: 30px;
+  color: #444444;
+}
+
+.show-review {
+  font-family: 'Poor Story', system-ui;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.review-box {
+  height: auto;
+  width: 900px;
+  padding: 0.5em 1em;
+  border: double 5px #BAD3FF;
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-contents {
+  width: 400px;
+  color: #444444;
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  background-color: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+.evaluation {
+  padding-bottom: 5px;
+}
+
+.category {
+  padding-bottom: 5px;
+}
+
+.text {
+  padding-bottom: 5px;
+}
+
+.show-review-bottom {
+  padding-top: 10px;
+  font-family: 'Poor Story', system-ui;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-edit-btn {
+  text-decoration: none;
+}
+
+.show-back-btn {
+  text-decoration: none;
+}
+
+.show-destroy-btn {
+  text-decoration: none;
+}
+
+.s-text {
+  color: #444444;
+}

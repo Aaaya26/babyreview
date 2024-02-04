@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index, :show]
+  
   def index
-    @reviews = Review.all
+    @reviews = Review.order(created_at: :DESC)
   end
 
   def new
@@ -10,12 +11,15 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    
     if @review.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
   private

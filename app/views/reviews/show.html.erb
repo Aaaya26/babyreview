@@ -1,0 +1,48 @@
+<div class="show-review-top">
+  <%= "😊#{@review.user.name}さんのレビュー👍" %>
+</div>
+
+<div class="show-review">
+  <div class="review-box">
+
+    <div class="review-img">
+      <%= image_tag @review.image.variant(resize: '450x450'), class:"review-box-img" %>
+    </div>
+    
+    <div class="show-contents">
+      <h3 class="item-name">
+        <%= @review.item_name %>
+      </h3>
+
+      <div class="evaluation">
+        <% @review.evaluation.id.times do |n| %>
+          <% if n % 2 == 0 %>
+            <%= "★" %>
+          <% else %>
+            <%= "☆" %>
+          <% end %>
+        <% end %>
+        <%= "(10点中#{@review.evaluation.name}点)" %>
+      </div>
+
+      <div class="category">
+        <%= @review.category.name %>
+      </div>
+
+      <div class="text">
+        <%= @review.text %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="show-review-bottom">
+  <% if user_signed_in? && @review.user_id == current_user.id %>
+    <%= link_to "edit", "#", method: :get, class: "show-edit-btn" %>
+    <p class="s-text">/</p>
+    <%= link_to "destroy", "#", data: {turbo_method: :delete}, class:"show-destroy-btn" %>
+    <p class="s-text">/</p>
+  <% end %>
+
+  <%= link_to 'back', root_path, class:"show-back-btn" %>
+</div>
