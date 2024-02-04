@@ -61,6 +61,10 @@
   text-decoration: none;
 }
 
+.show-destroy-btn {
+  text-decoration: none;
+}
+
 .s-text {
   color: #444444;
 }
