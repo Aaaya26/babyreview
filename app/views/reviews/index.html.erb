@@ -2,12 +2,15 @@
 <h3 class="midashi">to reviewボタンから投稿してね</h3>
 <%= link_to "to review", new_review_path, class:"review-btn" %>
 
+<div class='review-index'>
 <% @reviews.each do |review| %>
 
 <div class='review_list'>
+  <div class='index-img'>
   <%= link_to review_path(review.id) do %>
-  <%= image_tag review.image, class: 'review-image' if review.image.attached?%>
+  <%= image_tag review.image.variant(resize: '200x200'), class: 'review-image' if review.image.attached?%>
   <% end %>
+  </div>
   <h3 class='item_name'>
     <%= review.item_name %>
   </h3>
@@ -15,5 +18,5 @@
     <%= review.user.name %>
   </h4>
 </div>
-
 <% end %>
+</div>

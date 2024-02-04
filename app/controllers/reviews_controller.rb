@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   
   def index
-    @reviews = Review.all
+    @reviews = Review.order(created_at: :DESC)
   end
 
   def new

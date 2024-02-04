@@ -16,3 +16,28 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
+
+.review-index {
+  display: flex;
+  flex-direction: row;
+  padding: 5vh 0;
+}
+
+.review_list {
+  width: 220px;
+  height: 290px;
+  padding: 0.2em 0.5em;
+  margin: 20px;
+  color: #565656;
+  background-color: #ffeaea;
+  box-shadow: 0px 0px 0px 10px #ffeaea;
+  border: dashed 2px #ffc3c3;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.index-img {
+  width: 220px;
+  height: 200px;
+  
+}
