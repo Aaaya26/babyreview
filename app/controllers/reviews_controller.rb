@@ -30,10 +30,18 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      redirect_to root_path
+      redirect_to review_path
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    if current_user == review.user
+      review.destroy
+    end
+    redirect_to root_path
   end
 
   private
