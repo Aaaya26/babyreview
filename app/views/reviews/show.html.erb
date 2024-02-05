@@ -40,7 +40,7 @@
   <% if user_signed_in? && @review.user_id == current_user.id %>
     <%= link_to "edit", edit_review_path(@review.id), method: :get, class: "show-edit-btn" %>
     <p class="s-text">/</p>
-    <%= link_to "destroy", "#", data: {turbo_method: :delete}, class:"show-destroy-btn" %>
+    <%= link_to "destroy", review_path(@review.id),data:{turbo_method: :delete, turbo_confirm: 'このレビューを削除します'}, class:"show-destroy-btn" %>
     <p class="s-text">/</p>
   <% end %>
 
