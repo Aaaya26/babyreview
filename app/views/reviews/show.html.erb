@@ -15,7 +15,7 @@
       </h3>
 
       <div class="evaluation">
-        <% @review.evaluation.id.times do |n| %>
+        <% (@review.evaluation.id - 1).times do |n| %>
           <% if n % 2 == 0 %>
             <%= "★" %>
           <% else %>

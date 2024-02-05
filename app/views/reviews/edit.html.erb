@@ -1,0 +1,53 @@
+<div class=edit-review>
+<h2 class="edit-title">～Edit review product～</h2>
+
+  <%= form_with model:@review, local: true do |f| %>
+    <div class=edit-form>
+      <div class="weight-bold-text">
+        <span class="indispensable">※</span>
+        商品名
+        <span class="indispensable">※</span>
+      </div>
+      <%= f.text_area :item_name, class:"items-name", id:"item-name", placeholder:"商品名（40文字まで)", maxlength:"40" %>
+      
+      <div class="weight-bold-text">
+        <span class="indispensable">※</span>
+          評価
+        <span class="indispensable">※</span>
+      </div>
+      <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+      
+      <div class="weight-bold-text">
+        <span class="indispensable">※</span>
+          カテゴリー
+        <span class="indispensable">※</span>
+      </div>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+      
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          <span class="indispensable">※</span>
+          商品の説明
+          <span class="indispensable">※</span>
+        </div>
+        <%= f.text_area :text, class:"text", id:"text", placeholder:"商品のレビュー（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="weight-bold-text">
+        <span class="indispensable">※</span>
+        商品画像
+        <span class="indispensable">※</span>
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"review-image"  %>
+      </div>
+    </div>
+    <div class="edit-btn-contents">
+      <%= f.submit "edit review", class:"edit-btn" %>
+      <div class="btn">
+        <%=link_to 'back', root_path, class:"back-btn" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
