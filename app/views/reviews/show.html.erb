@@ -15,7 +15,7 @@
       </h3>
 
       <div class="evaluation">
-        <% @review.evaluation.id.times do |n| %>
+        <% (@review.evaluation.id - 1).times do |n| %>
           <% if n % 2 == 0 %>
             <%= "★" %>
           <% else %>
@@ -38,7 +38,7 @@
 
 <div class="show-review-bottom">
   <% if user_signed_in? && @review.user_id == current_user.id %>
-    <%= link_to "edit", "#", method: :get, class: "show-edit-btn" %>
+    <%= link_to "edit", edit_review_path(@review.id), method: :get, class: "show-edit-btn" %>
     <p class="s-text">/</p>
     <%= link_to "destroy", "#", data: {turbo_method: :delete}, class:"show-destroy-btn" %>
     <p class="s-text">/</p>

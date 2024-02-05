@@ -1,0 +1,27 @@
+.edit-review {
+  font-family: 'Poor Story', system-ui;
+  text-align: center;
+}
+
+.edit-form {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  margin: 20px;
+}
+
+.edit-btn-contents {
+  text-align: center;
+  font-family: 'Poor Story', system-ui;
+}
+
+.edit-btn {
+  font-family: 'Poor Story', system-ui;
+  background-color: #FFBEDA;
+  width: 170px;
+  height: 50px;
+  font-size: 20px;
+  color: #9057FF;
+  border: 3px solid #FFD5EC;
+}
