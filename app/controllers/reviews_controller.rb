@@ -20,6 +20,8 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @question = Question.new
+    @questions = @review.questions.includes(:user)
   end
 
   def edit
