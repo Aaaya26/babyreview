@@ -68,3 +68,44 @@
 .s-text {
   color: #444444;
 }
+
+/*question*/
+
+.container {
+  font-family: 'Poor Story', system-ui;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.question-box {
+  width: 900px;
+  text-align: center;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #474747;
+  background: whitesmoke;
+  border-left: double 7px #4ec4d3;
+  border-right: double 7px #4ec4d3;
+}
+
+.question-box-in {
+  width: 500px;
+  margin: 30px 150px 3px;
+  text-align: center;
+}
+
+.question-btn {
+  font-family: 'Poor Story', system-ui;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.question {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: #f0f7ff;
+  border: dashed 2px #5b8bd0;
+}
