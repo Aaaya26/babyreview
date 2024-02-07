@@ -15,7 +15,7 @@
         <p><%= question.comment %></p>
         <p>
           <strong><%= link_to question.user.name, "#" %>：</strong>
-          <%= question.created_at %>
+          <%= l question.created_at %>
         </p>
         </div>
       <% end %>
