@@ -45,4 +45,7 @@
   <% end %>
 
   <%= link_to 'back', root_path, class:"show-back-btn" %>
+
 </div>
+
+    <%= render partial: "question", locals: { review: @review } %>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="question-box">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@review, @question], local: true) do |form| %>
+        <%= form.text_area :comment, class:"question-box-in", placeholder: "コメントする", rows: "3" %>
+        <%= form.submit "question", class:"question-btn" %>
+      <% end %>
+    <% else %>
+      <strong><p>～ 質問の投稿には新規登録/ログインが必要です ～</p></strong>
+    <% end %>
+    <div class="questions">
+      <h4>＜質問一覧＞</h4>
+      <% @questions.each do |question| %>
+      <div class="question">
+        <p><%= question.comment %></p>
+        <p>
+          <strong><%= link_to question.user.name, "#" %>：</strong>
+          <%= l question.created_at %>
+        </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
