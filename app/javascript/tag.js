@@ -6,6 +6,8 @@ document.addEventListener("turbo:load", () => {
       const keyword = document.getElementById("tag-name").value;
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `/reviews/search/?keyword=${keyword}`, true);
+      XHR.responseType = "json";
+      XHR.send();
     });
     };
   });
