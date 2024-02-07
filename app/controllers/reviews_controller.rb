@@ -31,6 +31,7 @@ class ReviewsController < ApplicationController
     else
       review_attributes = @review.attributes
       @review_form = ReviewForm.new(review_attributes)
+      @review_form.tag_name = @review.tags.first&.tag_name
     end
   end
 
@@ -57,7 +58,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_form_params
-    params.require(:review_form).permit(:item_name, :category_id, :evaluation_id, :text, :image).merge(user_id: current_user.id)
+    params.require(:review_form).permit(:item_name, :category_id, :evaluation_id, :text, :tag_name, :image).merge(user_id: current_user.id)
   end
 
   def set_review
