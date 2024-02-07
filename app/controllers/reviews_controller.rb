@@ -7,12 +7,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
-  end
+    @review_form = ReviewForm.new
+    end
 
   def create
-    @review = Review.new(review_params)
-    if @review.save
+    @review_form = ReviewForm.new(review_form_params)
+    if @review_form.valid?
+      @review_form.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -27,15 +28,23 @@ class ReviewsController < ApplicationController
   def edit
     unless current_user == @review.user
       redirect_to root_path
+    else
+      review_attributes = @review.attributes
+      @review_form = ReviewForm.new(review_attributes)
+      @review_form.tag_name = @review.tags.first&.tag_name
     end
   end
 
   def update
-    if @review.update(review_params)
-      redirect_to review_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @review_form = ReviewForm.new(review_form_params)
+    @review_form.image ||= @review.image.blob
+
+      if @review_form.valid? 
+        @review_form.update(review_form_params, @review)
+        redirect_to review_path
+      else
+        render :edit, status: :unprocessable_entity
+      end
   end
 
   def destroy
@@ -46,10 +55,16 @@ class ReviewsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
 
-  def review_params
-    params.require(:review).permit(:item_name, :category_id, :evaluation_id, :text, :image).merge(user_id: current_user.id)
+  def review_form_params
+    params.require(:review_form).permit(:item_name, :category_id, :evaluation_id, :text, :tag_name, :image).merge(user_id: current_user.id)
   end
 
   def set_review

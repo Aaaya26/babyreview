@@ -32,6 +32,11 @@
       <div class="text">
         <%= @review.text %>
       </div>
+
+      <div class="tag">
+        <%= @review.tags.first&.tag_name %>
+        <div id="search-result"></div>
+        </div>
     </div>
   </div>
 </div>
