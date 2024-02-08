@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: 'reviews#index'
 
   resources :reviews do
+    resources :questions, only: [:create, :destroy]
     collection do
       get 'search'
     end
-    resources :questions, only: :create
   end
 end
