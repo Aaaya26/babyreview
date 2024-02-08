@@ -50,7 +50,9 @@ class ReviewsController < ApplicationController
   def destroy
     review = Review.find(params[:id])
     if current_user == review.user
-      review.tags.destroy_all
+      unless review.tags == nil
+        review.tags.destroy_all
+      end
       review.destroy
     end
     redirect_to root_path
