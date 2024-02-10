@@ -1,0 +1,19 @@
+.user-show-main {
+  font-family: 'Poor Story', system-ui;
+  text-align: center;
+}
+
+.user-show-btn {
+  font-family: 'Poor Story', system-ui;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #FFCCFF;
+  color: darkgray;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
