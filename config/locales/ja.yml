@@ -3,7 +3,7 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
 
-ja:
+
   date:
     order:
       - :year
