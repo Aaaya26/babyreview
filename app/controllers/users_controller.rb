@@ -7,13 +7,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+  
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.present?
-      @user.update(user_params)
+    if current_user.present?
+      current_user.update(user_params)
+      sign_in :user, @user, bypass: true
       redirect_to root_path
     else
       render :edit, status: :unprocessable_entity
@@ -23,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :child_birthday)
+    params.require(:user).permit(:name, :email, :child_birthday)
   end
 end
