@@ -8,7 +8,7 @@
         商品名
         <span class="indispensable">※</span>
       </div>
-      <%= f.text_area :item_name, class:"items-name", id:"item-name", placeholder:"商品名（40文字まで)", maxlength:"40" %>
+      <%= f.text_area :item_name, class:"items-name", id:"item-name", placeholder:"商品名（20文字まで)", maxlength:"20" %>
       
       <div class="weight-bold-text">
         <span class="indispensable">※</span>
@@ -30,7 +30,7 @@
           商品の説明
           <span class="indispensable">※</span>
         </div>
-        <%= f.text_area :text, class:"text", id:"text", placeholder:"商品のレビュー（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"text", id:"text", placeholder:"商品のレビュー（500文字まで）" ,rows:"7" ,maxlength:"500" %>
       </div>
 
       <div class="weight-bold-text">
@@ -38,7 +38,7 @@
         tag
         <span class="indispensable">※</span>
       </div>
-      <%= f.text_area :tag_name, class:"tag-name", id:"tag-name", placeholder:"",maxlength:"20" %>
+      <%= f.text_area :tag_name, class:"tag-name", id:"tag-name", placeholder:"タグ（10文字以内）",maxlength:"10" %>
       <div id="search-result"></div>
 
       <div class="weight-bold-text">
