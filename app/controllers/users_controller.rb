@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     def show
-      @reviews = current_user.reviews
+      @reviews = current_user.reviews.sort.reverse
     end
   end
 
