@@ -1,9 +1,9 @@
 <div class="container">
   <div class="question-box">
     <% if user_signed_in? %>
-      <%= form_with(model: [@review, @question], local: true) do |form| %>
-        <%= form.text_area :comment, class:"question-box-in", placeholder: "コメントする", rows: "3", maxlength:"100" %>
-        <%= form.submit "question", class:"question-btn" %>
+      <%= form_with(model: [@review, @question], local: true) do |f| %>
+        <%= f.text_area :comment, class:"question-box-in", placeholder: "コメントする", rows: "3", maxlength:"100" %>
+        <%= f.submit "question", class:"question-btn" %>
       <% end %>
     <% else %>
       <strong><p>～ 質問の投稿には新規登録/ログインが必要です ～</p></strong>
@@ -16,13 +16,12 @@
         <p>
           <strong><%= link_to question.user.name, "#" %>：</strong>
           <%= l question.created_at %>
+          <% if current_user == question.user %>
+            <strong>[<%= link_to "destroy", review_question_path(@review.id, question.id),data:{turbo_method: :delete, turbo_confirm: 'この質問を削除します'}, class:"question-destroy-btn" %>]</strong>
+            <% end %>
         </p>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
-
-
-
