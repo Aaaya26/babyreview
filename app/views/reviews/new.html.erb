@@ -2,6 +2,9 @@
 <h2 class="items-sell-title">～Enter review product～</h2>
 
   <%= form_with model:@review_form, url: reviews_path, method: :post, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
     <div class=new-form>
       <div class="weight-bold-text">
         <span class="indispensable">※</span>
