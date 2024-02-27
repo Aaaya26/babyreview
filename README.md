@@ -8,7 +8,7 @@ Baby Review
 また、自分自身が利用した商品の記録用としても使用可能です。
 
 # URL
-デプロイが完了次第記載します。
+https://babyreview.onrender.com
 
 # テスト用アカウント
 Basic認証ID：admin
@@ -19,7 +19,7 @@ Basic認証パスワード：1234678
 ### レビュー投稿
 1.トップページのヘッダーから新規登録を行う。
 
-2.新規レビューボタンから商品の内容（商品名、カテゴリ、評価（5点満点）、レビュー、画像）を入力し投稿
+2.新規レビューボタンから商品の内容（商品名、カテゴリ、評価（10点満点）、レビュー、画像）を入力し投稿
 
 ### 質問
 1.質問したい商品レビューの下部に質問内容を記入し、質問ボタンを押す。
@@ -41,16 +41,29 @@ webサイトで検索も可能ですが、情報が多いことと噓の情報�
 
 
 # 実装した機能についての画像やGIF
-出来上がり次第記載します。
+レビューの新規投稿機能（タグ）
+[![Image from Gyazo](https://i.gyazo.com/0e56a2c41740ab6888d8b96ad9cb2a00.gif)](https://gyazo.com/0e56a2c41740ab6888d8b96ad9cb2a00)
 
-# 実装予定の機能
-現在ユーザー機能を実装中です。
+レビューの新規投稿機能
+[![Image from Gyazo](https://i.gyazo.com/538b6edbe730251b0470b9d17d7dca9c.gif)](https://gyazo.com/538b6edbe730251b0470b9d17d7dca9c)
+
+レビューの詳細画面～編集画面への遷移
+[![Image from Gyazo](https://i.gyazo.com/d4d662471341fd1a87f1a42f82139e1c.gif)](https://gyazo.com/d4d662471341fd1a87f1a42f82139e1c)
+
+レビューの編集機能
+[![Image from Gyazo](https://i.gyazo.com/0d8d451604aa16dd2ee43e690c17aaed.gif)](https://gyazo.com/0d8d451604aa16dd2ee43e690c17aaed)
+
+レビューの削除機能
+[![Image from Gyazo](https://i.gyazo.com/75ad13d8544d4125f28b0b46b889ce0e.gif)](https://gyazo.com/75ad13d8544d4125f28b0b46b889ce0e)
+
+質問機能
+[![Image from Gyazo](https://i.gyazo.com/1a2d6d8a2c3af59b51af938ab1e559b0.gif)](https://gyazo.com/1a2d6d8a2c3af59b51af938ab1e559b0)
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/a8cf8d55d120f01feded606dc00220f4.png)](https://gyazo.com/a8cf8d55d120f01feded606dc00220f4)
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/9a7d20794096a12d3eb4ad3d3b5798da.png)](https://gyazo.com/9a7d20794096a12d3eb4ad3d3b5798da)
+[![Image from Gyazo](https://i.gyazo.com/f11d11fa14beb20a74f9592a09271182.png)](https://gyazo.com/f11d11fa14beb20a74f9592a09271182)
 
 # 開発環境
 ・Ruby
@@ -58,14 +71,14 @@ webサイトで検索も可能ですが、情報が多いことと噓の情報�
 # ローカルでの動作方法
 以下のコマンドを順に実装
 
-% git clone https://～
+% git clone https://github.com/Aaaya26/babyreview.git
 
-% cd
+% cd babyreview
 
 % bundle install
 
 # 工夫したポイント
-
-# 改善点
+タグ機能の実装
 
 # 製作時間
+60時間
