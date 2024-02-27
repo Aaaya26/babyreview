@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-  
   end
 
   def update
@@ -20,6 +19,13 @@ class UsersController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = 'ユーザー情報を削除しました。'
+    redirect_to root_path
   end
 
   private

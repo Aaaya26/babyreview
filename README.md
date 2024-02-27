@@ -63,14 +63,12 @@ webサイトで検索も可能ですが、情報が多いことと噓の情報�
 質問機能
 [![Image from Gyazo](https://i.gyazo.com/1a2d6d8a2c3af59b51af938ab1e559b0.gif)](https://gyazo.com/1a2d6d8a2c3af59b51af938ab1e559b0)
 
-# 実装予定の機能
-質問の編集・削除機能を実装予定。
-
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/a8cf8d55d120f01feded606dc00220f4.png)](https://gyazo.com/a8cf8d55d120f01feded606dc00220f4)
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/f11d11fa14beb20a74f9592a09271182.png)](https://gyazo.com/f11d11fa14beb20a74f9592a09271182)
+
 # 開発環境
 ・Ruby
 
@@ -86,8 +84,5 @@ webサイトで検索も可能ですが、情報が多いことと噓の情報�
 # 工夫したポイント
 タグ機能の実装
 
-# 改善点
-子どもの生年月日を活用できていないので、これから年齢を算出して表示させたい。
-
 # 製作時間
-50時間
+60時間
