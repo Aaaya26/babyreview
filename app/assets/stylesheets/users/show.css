@@ -17,3 +17,18 @@
   margin-bottom: 20px;
   text-align: center;
 }
+
+.user-destroy-btn {
+  font-family: 'Poor Story', system-ui;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #FF367F;
+  border-radius: 5px;
+  background-color: #FFABCE;
+  color: darkgrey;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
