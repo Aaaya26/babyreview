@@ -2,6 +2,9 @@
 <h2 class="edit-title">～Edit review product～</h2>
 
   <%= form_with model:@review_form, url: review_path(@review.id), method: :patch, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
     <div class=edit-form>
       <div class="weight-bold-text">
         <span class="indispensable">※</span>

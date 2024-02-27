@@ -7,7 +7,7 @@ class Review < ApplicationRecord
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :evaluation
+  belongs_to :category   ,numericality: { other_than: 1, message: "can't be blank" }
+  belongs_to :evaluation ,numericality: { other_than: 1, message: "can't be blank" }
  
 end

@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   def show
     def show
-      @reviews = current_user.reviews.sort.reverse
+      query = "SELECT * FROM reviews"
+      @reviews = Review.find_by_sql(query)
     end
   end
 
