@@ -42,3 +42,9 @@
   height: 200px;
   
 }
+
+.review-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
