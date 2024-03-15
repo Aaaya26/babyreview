@@ -6,15 +6,16 @@
   <div class="review-box">
 
     <div class="review-img">
-      <%= image_tag @review.image.variant(resize: '450x450'), class:"review-box-img" %>
+      <%= image_tag @review.image, class:"review-box-img" %>
     </div>
     
     <div class="show-contents">
-      <h3 class="item-name">
+      <h3 class="item-name"><span class="show-color">商品名：</span>
         <%= @review.item_name %>
       </h3>
 
       <div class="evaluation">
+        <span class="show-color">評価：</span>
         <% (@review.evaluation.id - 1).times do |n| %>
           <% if n % 2 == 0 %>
             <%= "★" %>
@@ -25,18 +26,21 @@
         <%= "(10点中#{@review.evaluation.name}点)" %>
       </div>
 
-      <div class="category">
+      <div class="category"><span class="show-color">カテゴリー：</span>
         <%= @review.category.name %>
       </div>
 
-      <div class="text">
-        <%= @review.text %>
+      <div class="text"><span class="show-color">レビュー：</span>
+        <%= @review.text%>
       </div>
 
-      <div class="tag">
-        <%= @review.tags.first&.tag_name %>
-        <div id="search-result"></div>
+      <% unless @review.tags == nil %>
+        <div class="tag">
+          <span class="show-color">タグ：</span>
+          <%= @review.tags.first&.tag_name %>
+          <div id="search-result"></div>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
