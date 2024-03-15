@@ -5,18 +5,34 @@
 <div class='review-index'>
 <% @reviews.each do |review| %>
 
-<div class='review_list'>
-  <div class='index-img'>
-  <%= link_to review_path(review.id) do %>
-  <%= image_tag review.image.variant(resize: '200x200'), class: 'review-image' if review.image.attached?%>
-  <% end %>
+  <div class='review_list'>
+    <div class='index-img'>
+      <%= link_to review_path(review.id) do %>
+      <%= image_tag review.image, class: 'review-img' if review.image.attached?%>
+      <% end %>
+    </div>
+    <h3 class='item_name'>
+      <%= review.item_name %>
+    </h3>
+    <h4 class='user_name'>
+      <%= review.user.name %>
+    </h4>
   </div>
-  <h3 class='item_name'>
-    <%= review.item_name %>
-  </h3>
-  <h4 class='user_name'>
-    <%= review.user.name %>
-  </h4>
-</div>
+<% end %>
+
+<% if @reviews.empty? %>
+  <div class='review_list'>
+    <div class='index-img'>
+      <%= link_to '#' do %>
+      <%= image_tag "sample-review.jpg", class: 'review-img' %>
+      <% end %>
+    </div>
+    <h3 class='item_name'>
+      sample review
+    </h3>
+    <h4 class='user_name'>
+      sample name
+    </h4>
+  </div>
 <% end %>
 </div>
